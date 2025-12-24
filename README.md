@@ -1,4 +1,4 @@
-Tata Cara Penggunaan Aplikasi Web
+**Tata Cara Penggunaan Aplikasi Web**
 
 Aplikasi web ini dapat dijalankan secara lokal (local development).
 
@@ -15,14 +15,14 @@ Setelah file berhasil diunduh, buka folder proyek menggunakan code editor masing
 
 C. Masuk ke Direktori public
 Buka terminal atau command prompt pada code editor, kemudian arahkan direktori kerja ke folder public dengan perintah:
-"cd public"
+**"cd public"**
 
 D. Menjalankan Server Lokal PHP
 Jalankan server bawaan PHP dengan perintah:
-"php -S localhost:8000"
+**"php -S localhost:8000"**
 
 E. Akses Aplikasi
 Buka browser dan akses aplikasi melalui alamat:
-"http://localhost:8000"
+**"http://localhost:8000"**
 
 Aplikasi akan berjalan secara lokal dan siap digunakan.
