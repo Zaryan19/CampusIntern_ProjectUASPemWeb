@@ -1,0 +1,1873 @@
+/* ====== RESET ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ADMIN SIDE CSS */
+/* ===== ADMIN DASHBOARD ===== */
+
+.admin-dashboard {
+  padding: 30px;
+  background: #f2f2f2;
+  min-height: 100vh;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 25px;
+  flex-wrap: wrap
+}
+
+.admin-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.admin-card h2 {
+  font-size: 34px;
+  margin: 0;
+}
+
+.admin-card p {
+  margin: 5px 0 0;
+  color: #555;
+}
+
+.link-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-card:hover {
+  background: #a8b3be;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.user-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.user-card-lowongan {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.user-name {
+  font-size: 30px;      /* nama */
+  font-weight: 600;
+}
+
+.user-info span{
+  display: block;
+  color: #666;
+  font-size: 20px;
+}
+
+.badge-user {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.badge-user.active {
+  background: #4ade80;
+  color: #065f46;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.badge-user.banned {
+  background: #ef4444;
+  color: #fff;
+  margin-left: 8px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.statusLowonganActive {
+  color: #00f476;
+}
+
+.statusLowonganBanned {
+  color: red;
+}
+
+.lowongan-detail {
+    margin-top: 20px;
+    padding-top: 15px;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.lowongan-detail.show {
+    max-height: 3000px;
+}
+
+.user-info small {
+    white-space: normal;   /* BOLEH TURUN BARIS */
+    overflow: visible;     /* JANGAN DIPOTONG */
+    text-overflow: unset;
+    display: block;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+
+.btn-detail {
+    margin-top: 15px;
+    padding: 6px 12px;
+    background: #2b2b2b;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-detail:hover {
+    background: #6d6c6c;
+}
+
+.user-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+
+.user-actions {
+      border-top: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.user-info {
+    flex: 1;
+    min-width: 0;   /* 🔥 WAJIB BIAR TEKS GA KEPOONG */
+}
+
+
+
+/* ===================================================== */
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #343a41;
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* navbar coba */
+.nav-menu .nav-item .nav-link {
+  color: #ffffff; /* teks putih */
+  text-decoration: none; /* hilangkan garis bawah */
+  padding: 8px 15px; /* area klik lebih besar */
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s; /* animasi halus */
+}
+
+.nav-menu .nav-item .nav-link:hover {
+  color: #dcdcdc; /* warna sedikit lebih muda saat hover */
+}
+
+.buttonlogout {
+  background-color: #e63946; /* Merah */
+  color: #fff; /* Teks putih */
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.buttonlogout:hover {
+  background-color: #c62836; /* Merah lebih gelap saat hover */
+}
+
+/* style login */
+.buttonlogin {
+  background-color: #3b82f6; /* biru */
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none; /* biar tidak underline */
+}
+.buttonlogin:hover {
+  background-color: #2563eb; /* biru gelap saat hover */
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: flex-end; /* geser ke kanan */
+  align-items: center; /* sejajar vertikal */
+  gap: 15px; /* jarak antar tombol */
+  margin-right: 10px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 15px; /* jarak antar menu Beranda & Informasi */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link,
+.buttonlogin {
+  color: white; /* teks putih */
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Memastikan menu induk juga menyesuaikan */
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px; /* Jarak antara kotak fitur */
+}
+
+.dark-mode-toggle {
+  background: #fff;
+  color: #1b2026;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* LOGIN */
+/* ---------------------------------- */
+/* GLOBAL & LAYOUT STYLES (Targeting Auth Card) */
+/* ---------------------------------- */
+.auth-form-card {
+  border-radius: 10px;
+  background: rgb(109, 179, 255);
+  border: 1px solid rgb(109, 179, 255);
+  width: 90%;
+  max-width: 450px;
+}
+
+.auth-form-card-regist {
+  border-radius: 10px;
+  background: rgb(109, 179, 255);
+  border: 1px solid rgb(109, 179, 255);
+  width: 90%;
+  max-width: 450px;
+  margin: 30px 30px;
+}
+
+.auth-page-container {
+  min-height: 100vh; /* Memastikan container menempati tinggi layar penuh */
+  display: flex; /* Mengaktifkan Flexbox */
+  flex-direction: column; /* Mengatur item dari atas ke bawah */
+  justify-content: center; /* <<< PEMUSATAN VERTIKAL (Tengah Atas/Bawah) */
+  align-items: center;
+}
+
+.login-form {
+  border-radius: 0px;
+}
+
+.form-title {
+  text-align: center;
+  margin: 0%; /* Memberikan ruang di bawah judul */
+  font-size: 1.75rem; /* 28px */
+  font-weight: 700; /* Lebih tebal */
+  color: #ffffff;
+}
+
+.form-title-regist {
+  text-align: center;
+  margin: 0%; /* Memberikan ruang di bawah judul */
+  font-size: 1.75rem; /* 28px */
+  font-weight: 700; /* Lebih tebal */
+  color: #ffffff;
+  padding: 20px 20px;
+}
+
+.login-form {
+  /* Menggunakan Flexbox untuk menata elemen dalam formulir */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Jarak antara grup form */
+  padding: 30px; /* Lebih besar, seperti form-container */
+  border: 1px solid #e0e0e0;
+  border-radius: 0px; /* Lebih bulat */
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Shadow yang lebih jelas */
+  /* Catatan: Lebar harus dikontrol oleh layout utama (auth-card-wrapper) */
+}
+
+.session-status {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  font-weight: 500;
+}
+
+/* ---------------------------------- */
+/* FORM GROUP STYLES */
+/* ---------------------------------- */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 0.875rem; /* setara dengan text-sm */
+  font-weight: 600; /* setara dengan font-semibold */
+  margin-bottom: 5px; /* Sedikit kurang dari 6px */
+  color: #333; /* Warna gelap */
+}
+
+.form-input {
+  padding: 10px; /* Sesuai dengan kode baru */
+  border: 1px solid #ccc; /* Border abu-abu muda */
+  border-radius: 5px; /* Radius sedikit lebih kecil */
+  font-size: 14px; /* Font size yang lebih kecil */
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-input:focus {
+  border-color: #007bff; /* Mengubah warna fokus menjadi biru primer */
+  box-shadow: none; /* Menghapus box shadow fokus yang berlebihan */
+  outline: none;
+}
+
+.error-message {
+  font-size: 0.8rem;
+  color: #dc3545;
+  margin-top: 5px;
+}
+
+/* ---------------------------------- */
+/* REMEMBER ME STYLES */
+/* ---------------------------------- */
+
+.form-remember {
+  margin-top: -10px;
+}
+
+.remember-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.remember-checkbox {
+  margin-right: 8px;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #999;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.remember-checkbox:checked {
+  background-color: #007bff; /* Mengubah warna centang menjadi biru primer */
+  border-color: #007bff;
+}
+
+.remember-checkbox:checked::before {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  color: #ffffff;
+}
+
+/* ---------------------------------- */
+/* ACTIONS BUTTONS STYLES */
+/* ---------------------------------- */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.forgot-link {
+  font-size: 0.875rem;
+  color: #666;
+  text-decoration: underline;
+  margin-right: 15px;
+  transition: color 0.15s;
+}
+
+.forgot-link:hover {
+  color: #007bff; /* Hover ke biru primer */
+}
+
+/* Gaya dasar untuk semua tombol aksi (Register dan Login) */
+.btn-register,
+.btn-login-submit {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px; /* Mengikuti radius input */
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s; /* Menggunakan transisi 0.3s */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-register {
+  background-color: #6c757d; /* Warna abu-abu netral (Sekunder) */
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.btn-register:hover {
+  background-color: #5a6268;
+}
+
+.btn-login-submit {
+  background-color: #007bff; /* Warna biru primer */
+  color: #ffffff;
+}
+
+.btn-login-submit:hover {
+  background-color: #0056b3;
+}
+/* END LOGIN */
+
+/* REGISTER START */
+
+.form-title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px; /* Memberikan ruang di bawah judul */
+  font-size: 1.75rem; /* 28px */
+  font-weight: 700; /* Lebih tebal */
+  color: #ffffff; /* DIUBAH MENJADI PUTIH */
+}
+
+/* Menggabungkan style untuk .login-form dan .register-form */
+.login-form,
+.register-form {
+  /* Menggunakan Flexbox untuk menata elemen dalam formulir */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Jarak antara grup form */
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.session-status {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  font-weight: 500;
+}
+
+/* ---------------------------------- */
+/* FORM GROUP STYLES */
+/* ---------------------------------- */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  /* Tambahkan box-shadow: none; untuk menghapus shadow bawaan browser pada input */
+  box-shadow: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-input:focus {
+  /* Menghilangkan outline bawaan browser saat fokus */
+  outline: none;
+  /* Memberikan focus ring kustom berwarna biru */
+  border-color: #ffffff; /* Biru Primer */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Custom blue ring */
+}
+
+.error-message {
+  font-size: 0.8rem;
+  color: #dc3545;
+  margin-top: 5px;
+}
+
+/* ---------------------------------- */
+/* REMEMBER ME STYLES */
+/* ---------------------------------- */
+
+.form-remember {
+  margin-top: -10px;
+}
+
+.remember-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.remember-checkbox {
+  margin-right: 8px;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #999;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.remember-checkbox:checked {
+  background-color: #007bff; /* Biru Primer */
+  border-color: #007bff;
+}
+
+.remember-checkbox:checked::before {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10px;
+  color: #ffffff;
+}
+
+/* ---------------------------------- */
+/* ACTIONS BUTTONS STYLES */
+/* ---------------------------------- */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Link untuk Lupa Password (.forgot-link) dan Sudah Terdaftar (.login-link) */
+.forgot-link,
+.login-link {
+  font-size: 0.875rem;
+  color: #666;
+  text-decoration: underline;
+  margin-right: 15px;
+  transition: color 0.15s;
+}
+
+.forgot-link:hover,
+.login-link:hover {
+  color: #007bff; /* Hover ke biru primer */
+}
+
+/* Gaya dasar untuk semua tombol aksi (Register, Login, Submit) */
+.btn-register,
+.btn-login-submit,
+.btn-register-submit {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tombol Sekunder (Register pada halaman Login) */
+.btn-register {
+  background-color: #6c757d; /* Abu-abu netral */
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.btn-register:hover {
+  background-color: #5a6268;
+}
+
+/* Tombol Primer (Login Submit dan Register Submit) */
+.btn-login-submit,
+.btn-register-submit {
+  background-color: #007bff; /* Biru Primer */
+  color: #ffffff;
+}
+
+.btn-login-submit:hover,
+.btn-register-submit:hover {
+  background-color: #0056b3;
+}
+
+/* REGISTER END */
+
+/* ====== HERO ====== */
+.hero {
+  position: relative;
+  background: url("../img/Magang.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.search-box {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 170px;
+  margin: 15px auto 0;
+}
+
+.search-box input,
+.search-box select,
+.search-box button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.search-box input,
+.search-box select {
+  flex: 1;
+  min-width: 150px;
+}
+
+.search-box button {
+  background: #0a28ed;
+  color: #f3ecec;
+  border: none;
+  cursor: pointer;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* ====== SECTION ====== */
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  gap: 30px;
+}
+
+.section.reverse {
+  flex-direction: row-reverse;
+}
+
+.section .text {
+  flex: 1;
+}
+
+.section .text h2 {
+  color: #040505;
+  margin-bottom: 10px;
+}
+
+.section .image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ====== STEPS ====== */
+.steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 60px 10%;
+  gap: 30px;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+.step {
+  flex: 1 1 200px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.circle {
+  background: #053ee8;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ====== FAQ ====== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+}
+
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  color: #222;
+}
+
+.toggle-btn {
+  font-size: 22px;
+  transition: transform 0.2s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  color: #555;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 5px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* tinggi maksimal konten */
+  padding-top: 10px;
+}
+
+.faq-item.active .toggle-btn {
+  transform: rotate(180deg);
+}
+
+/* =========== informasi =========*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+}
+
+/* jabatan h2
+prodi h4 class h4
+desk singkat "deskripsicard"
+selebihnya deskripsicardisi */
+
+.deskripsicard {
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+.deskripsicardisi {
+  font-size: 13px;
+}
+
+.card-title {
+  font-size: 13px;
+}
+
+.highlight {
+  font-size: 13px;
+}
+.h4 {
+  padding-top: 10px;
+}
+
+.card {
+  background: linear-gradient(135deg, #e4e7ff, #d7d7e9);
+  padding: 20px 25px;
+  border-radius: 16px;
+  margin: 15px 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-hidden {
+  background: linear-gradient(135deg, #e4e7ff, #d7d7e9);
+  padding: 20px 25px;
+  border-radius: 16px;
+  margin: 15px 0px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.gambarcard {
+  width: 110px;
+  height: auto;
+  float: right;
+  margin-left: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .gambarcard {
+  transform: scale(1.05);
+}
+
+/* button daftar */
+.btn-daftar {
+  display: block;
+  margin: 15px auto 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-daftar:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+/* button sosmed dan web perusahaan */
+.button-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+a.btn {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 9px 10px;
+  border-radius: 12px;
+  font-weight: 100;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+a.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Tombol Website info */
+.btn-website {
+  background: linear-gradient(135deg, #0077ff, #0056cc);
+}
+
+.btn-website:hover {
+  background: linear-gradient(135deg, #0056cc, #003f99);
+}
+
+/* Tombol Instagram */
+.btn-instagram {
+  background: linear-gradient(135deg, #fd1d1d, #833ab4);
+}
+
+.btn-instagram:hover {
+  background: linear-gradient(135deg, #833ab4, #c13584);
+}
+
+i {
+  width: 20px;
+  height: 20px;
+}
+
+/* button hide info */
+.toggle-icon {
+  font-size: 1.5rem;
+  color: #3498db;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* infoooooooooooo (bkn akhir)*/
+.card-content {
+  max-width: 700px;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  background-color: white;
+}
+
+.card-content.active {
+  padding: 20px;
+  max-height: 1900px;
+  border-radius: 10px;
+}
+
+.description-short {
+  color: #7f8c8d;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.description-long {
+  color: #2c3e50;
+  line-height: 1.7;
+}
+
+.description-long ul {
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.description-long li {
+  margin-bottom: 8px;
+}
+
+.highlight {
+  background-color: #e1f5fe;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  border-left: 4px solid #0288d1;
+}
+
+/* =========pendfatarn======== */
+.form-title {
+  text-align: center;
+  /* margin: 30px 0 10px; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bolder;
+  color: #333;
+}
+
+#multiStepForm {
+  max-width: 600px;
+  margin: 20px auto 50px;
+}
+.form-wrapper {
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f4f7; /* warna background biar enak dilihat */
+  padding-bottom: 40px;
+}
+
+.form-container {
+  background: #fff;
+  width: 450px;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+  background-color: #363b48;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+  margin: 0; /* HAPUS margin yang bikin turun */
+  position: relative;
+  top: -45px; /* Tarik sedikit naik */
+  width: calc(100% + 60px); /* Samakan lebar dengan form */
+  left: -30px; /* Biar pas sama border form */
+  margin-bottom: -30px;
+}
+
+.form-step input,
+.form-step select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn-next {
+  background-color: #363b48;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  float: right;
+  cursor: pointer;
+}
+
+.btn-submit {
+  float: right;
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #007bff;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #c0c0c0;
+  cursor: not-allowed;
+}
+
+/* Sembunyikan step */
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.success-message {
+  background: white;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 500px;
+  margin: 60px auto;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.success-message h3 {
+  color: #28a745;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.success-message p {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* DASHBOARD PERUSAHAAN START */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 100px;
+  background-color: #ffffff; /* Kontainer utama berwarna putih murni */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sedikit bayangan untuk mengangkat kontainer */
+}
+
+hr {
+  border: none;
+  margin: 20px 0;
+}
+
+/* --- BUTTONS & ACTIONS --- */
+.dashboard-actions {
+  margin-bottom: 25px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+}
+
+.btn-edit {
+  text-decoration: none;
+  padding: 7px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+}
+
+.btn-lg {
+  padding: 12px 25px;
+  font-size: 1.1em;
+  color: black;
+}
+
+/* Button Sukses/Utama: Menggunakan skema warna yang lembut */
+.btn-success {
+  background-color: #5a5a5a; /* Warna terang sesuai permintaan gradasi */
+  color: #0c5460; /* Teks gelap */
+  border-color: #c0c0d9;
+}
+
+.btn-success:hover {
+  background-color: #5a5a5a;
+  border-color: #b0b0cc;
+  color: #ffffff;
+}
+
+/* Button Edit */
+.btn-warning {
+  background-color: #ffeeba; /* Kuning muda yang sangat pucat */
+  color: #000000;
+  border: 1px solid #ffeeba;
+}
+
+.btn-warning:hover {
+  background-color: #edce71;
+}
+
+/* Button Hapus */
+.btn-danger {
+  background-color: #f8d7da; /* Merah muda yang sangat pucat */
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+
+.btn-danger:hover {
+  background-color: #f5c2c7;
+}
+
+/* --- ALERT MESSAGES (CARD) --- */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  /* Menggunakan linear-gradient untuk memberikan efek "card" */
+  background: linear-gradient(135deg, #e4e7ff, #d7d7e9);
+  color: #31708f; /* Warna teks yang kontras namun lembut */
+}
+
+/* Alert Info (Untuk "Anda belum memposting...") */
+.alert-info {
+  border-color: #b8daff;
+  color: #0c5460;
+}
+
+/* Alert Success (Jika ada notifikasi sukses) */
+.alert-success {
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+/* --- TABLE STYLES --- */
+.posting-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Bayangan tipis untuk tabel */
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden; /* Memastikan sudut yang membulat berfungsi */
+}
+
+.posting-table th,
+.posting-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.posting-table thead {
+  background-color: #f2f2f2; /* Latar belakang header abu-abu terang */
+  color: #333;
+  font-weight: 600;
+}
+
+/* Efek stripe */
+.posting-table tbody tr:nth-child(even) {
+  background-color: #fafafa; /* Baris genap sedikit lebih gelap */
+}
+
+.posting-table tbody tr:hover {
+  background-color: #f0f0f0; /* Efek hover halus */
+}
+
+/* Kolom Aksi (agar tidak terlalu lebar) */
+.posting-table td:last-child {
+  white-space: nowrap;
+  width: 1%;
+}
+
+/* --- BADGES (Status) --- */
+.badge {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Status Aktif */
+.badge-success {
+  background-color: #d4edda; /* Hijau muda yang sangat pucat */
+  color: #155724;
+}
+
+/* Status Kadaluarsa */
+.badge-danger {
+  background-color: #f8d7da; /* Merah muda yang sangat pucat */
+  color: #842029;
+}
+
+/* --- ICONS (Feather Icons) --- */
+i[data-feather] {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+/* DASHBOARD PERUSAHAAN END */
+
+/* ADD INTERNSHIP START */
+.form-container-intern,
+.form-container-editintern {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 35px;
+  background-color: #ffffff; /* Kontainer formulir berwarna putih murni */
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Bayangan lembut yang lebih menonjol */
+}
+
+/* --- FORM GROUPS & INPUTS --- */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+  font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  box-sizing: border-box; /* Memastikan padding tidak menambah lebar */
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #ffffff;
+}
+
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px dashed #cccccc; /* Border dashed untuk input file */
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #c0c0d9; /* Border saat fokus dari warna gradasi terang */
+  box-shadow: 0 0 0 3px rgba(228, 231, 255, 0.5); /* Efek fokus lembut */
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical; /* Hanya izinkan resize vertikal */
+}
+
+/* --- FORM ROW (Kolom Samping) --- */
+.form-row {
+  display: flex;
+  gap: 20px; /* Jarak antara kolom */
+}
+
+.form-row .form-group {
+  flex: 1; /* Membuat kolom berbagi ruang secara merata */
+}
+
+/* --- ALERT MESSAGES (Card Style) --- */
+.alert {
+  padding: 15px;
+  margin-bottom: 25px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 500;
+  /* Menggunakan linear-gradient sebagai latar belakang card */
+  background: linear-gradient(135deg, #e4e7ff, #d7d7e9);
+  color: #31708f; /* Warna teks yang kontras namun lembut */
+}
+
+.alert-danger {
+  background: linear-gradient(
+    135deg,
+    #f8d7da,
+    #f5c2c7
+  ); /* Gradasi merah muda untuk error */
+  color: #842029;
+  border-color: #f5c2c7;
+}
+
+.alert-success {
+  background: linear-gradient(
+    135deg,
+    #d4edda,
+    #c3e6cb
+  ); /* Gradasi hijau muda untuk sukses */
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+/* --- SUBMIT BUTTON --- */
+.btn-submit {
+  display: block;
+  width: 100%; /* Tombol lebar penuh */
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  /* Gaya tombol submit - Menggunakan warna gradasi terang untuk latar belakang */
+  background-color: #e4e7ff;
+  color: #2c3e50; /* Warna teks gelap agar kontras dengan latar terang */
+  border: 1px solid #c0c0d9;
+}
+
+.btn-submit:hover {
+  background-color: #d7d7e9; /* Sedikit lebih gelap saat hover */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ADD INTERNSHIP END */
+
+/* page title info */
+.page-title {
+  /* Rata Tengah */
+  text-align: center;
+
+  /* Font dan Warna */
+  font-size: 2.3em; /* Ukuran font besar */
+  font-weight: 700; /* Tebal */
+  color: #1a1a1a;
+
+  /* Jarak dan Garis Bawah */
+  margin-top: 15px;
+  margin-bottom: 35px;
+
+  /* Sentuhan minor untuk memberikan kesan kedalaman/profesional */
+  letter-spacing: 0.5px;
+}
+
+.page-title::after {
+  content: ""; /* Wajib ada untuk pseudo-element */
+  display: block; /* Agar bisa diatur lebar dan margin-nya */
+
+  /* 2. Mengatur lebar garis (sesuaikan nilai persentase ini) */
+  width: 25%;
+
+  /* 3. Mengatur margin otomatis agar garis berada di tengah */
+  margin: 10px auto 0 auto; /* Atas | Kanan(Auto) | Bawah | Kiri(Auto) */
+
+  /* 4. Gaya Garis */
+  height: 2px; /* Ketebalan garis */
+  background-color: #000000; /* Warna garis */
+}
+/* page title info end */
+
+/* button edit intern */
+
+/* button edit intern end */
+
+/* === DARK MODE === */
+body.dark .form-title {
+  color: #fff;
+}
+body.dark .form-header {
+  background-color: rgb(97, 97, 97);
+}
+body.dark .form-wrapper {
+  background-color: #1e1e1e;
+}
+
+body.dark .form-container {
+  background-color: #3a3a3a;
+}
+
+body.dark label {
+  color: #f5f5f5;
+}
+
+body.dark textarea,
+body.dark select,
+body.dark input {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Terapkan style ini HANYA kalau ada class 'dark-mode' di body */
+body.dark input:-webkit-autofill,
+body.dark input:-webkit-autofill:hover,
+body.dark input:-webkit-autofill:focus,
+body.dark textarea:-webkit-autofill,
+body.dark textarea:-webkit-autofill:hover,
+body.dark textarea:-webkit-autofill:focus,
+body.dark select:-webkit-autofill,
+body.dark select:-webkit-autofill:hover,
+body.dark select:-webkit-autofill:focus {
+  background-color: #2a2d34 !important; /* 🎯 UBAH WARNA DI SINI */
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+  border: 1px solid #555 !important;
+}
+
+/* Styling dropdown datalist biar cocok sama dark mode */
+body.dark input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+body.dark datalist {
+  background-color: #2a2d34;
+  color: #fff;
+}
+
+body.dark option {
+  background-color: #2a2d34;
+  color: white;
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #2e343c;
+  color: white;
+  font-size: 0.9em;
+}
+
+/* ====== DARK MODE ====== */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .navbar {
+  background: #3a3a3a;
+  color: #fff;
+}
+
+body.dark .dark-mode-toggle {
+  background: #333;
+  color: #fff;
+}
+
+body.dark .section,
+body.dark .steps,
+body.dark .faq {
+  background: #181818;
+}
+
+body.dark .faq h2,
+body.dark .section .text h2 {
+  color: #90caf9;
+}
+
+body.dark .step {
+  background: #242424;
+  color: #eee;
+}
+
+body.dark .footer {
+  background: #3a3a3a;
+  color: #ccc;
+}
+
+body.dark .search-box input,
+body.dark .search-box select {
+  background: #2c2c2c;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+/* === DARK MODE STYLE === */
+body.dark {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+body.dark .faq {
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .faq-question {
+  color: #fff; /* tulisan pertanyaan jadi putih */
+  border-color: #444;
+}
+
+body.dark .faq-answer {
+  color: #ddd; /* teks jawaban jadi abu terang */
+}
+
+body.dark .toggle-btn {
+  color: #fff;
+}
+
+/* darkmode gweh */
+body.dark .grid-container {
+  background: #1e1e1e;
+  border-color: #444;
+}
+
+body.dark .card {
+  background: #3d3d3d;
+  border-color: #444;
+}
+
+body.dark .card-content {
+  background: #343434;
+  border-color: #444;
+}
+
+body.dark .card-content.active {
+  background-color: #3c3c3c;
+  border-color: #555;
+  color: #fff;
+}
+
+body.dark .h2 {
+  color: #fff;
+}
+
+body.dark .highlight {
+  border-left: 4px solid #e4e4e4;
+  background-color: #555;
+}
+
+body.dark .description-short,
+body.dark .description-long {
+  border-color: #555;
+  color: #fff;
+}
+
+/* LOGIN DARKKKKKKK */
+body.dark .auth-form-card {
+  background: rgb(152, 152, 152);
+  color: white;
+  border: 1.6px solid rgb(255, 255, 255);
+}
+
+body.dark .login-form,
+body.dark .register-form{
+  background: #3c3c3c;
+  color: white;
+}
+
+body.dark .login-link {
+  color: white;
+}
+
+body.dark .page-title {
+  color: white;
+}
+
+body.dark .card-header, body.dark .card-hidden {
+  background: #8e877fff;
+}
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8em;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dark-mode-toggle {
+    align-self: flex-end;
+  }
+
+  /* infoo */
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .gambarcard {
+    margin: 0 0 20px 0;
+  }
+
+  .button-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5em;
+  }
+
+  .section,
+  .steps,
+  .faq {
+    padding: 40px 5%;
+  }
+
+  .search-box input,
+  .search-box select,
+  .search-box button {
+    width: 100%;
+  }
+
+  /* info */
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .button-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
